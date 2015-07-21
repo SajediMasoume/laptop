@@ -4,6 +4,7 @@ NixOS/
 scala/
 scalameta/
 metadoc/
+cintia/
 
 .cache/
 .compose-cache/
@@ -19,8 +20,12 @@ metadoc/
 .pki
 .scala_history
 .ssh/
+.wifi/
 .Xauthority
 .xsession-errors
 .zcompdump*
 .zsh_history
 .zsh-update
+.config/configstore/
+.config/node-webkit/
+

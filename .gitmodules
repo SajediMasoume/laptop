@@ -40,3 +40,6 @@
 [submodule "metadoc/dbuild"]
 	path = metadoc/dbuild
 	url = git@github.com:metadoc/dbuild.git
+[submodule "MasseGuillaume/HaHaHa"]
+	path = MasseGuillaume/HaHaHa
+	url = git@bitbucket.org:masseguillaume/wifi.git
