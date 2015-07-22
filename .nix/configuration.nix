@@ -35,6 +35,7 @@
     dmenu
     docker
     git
+    gimp
     idea.idea-community
     mercurial # command-not-found script
     mplayer
@@ -45,6 +46,7 @@
     rxvt_unicode
     sbt
     scala_2_11
+    scrot
     sublime3
     tig
     tree

@@ -29,4 +29,5 @@ metadoc/
 .zsh-update
 .config/configstore/
 .config/node-webkit/
-
+.gimp-2.8/
+.thumbnails/
