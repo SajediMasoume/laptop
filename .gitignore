@@ -4,7 +4,7 @@ NixOS/
 scala/
 scalameta/
 metadoc/
-cintia/
+.cintia/
 
 .cache/
 .compose-cache/

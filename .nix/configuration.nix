@@ -31,7 +31,7 @@
     acpi
     ansible
     atom
-    chromium
+    chromiumDev
     dmenu
     docker
     git
