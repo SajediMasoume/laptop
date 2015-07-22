@@ -1,21 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
-let 
-  hsPackages = with pkgs.haskellPackages; [
-    cabal2nix
-    cabalInstall
-    doctest
-    ghc
-    ghcCore
-    ghcid
-    hlint
-    idris
-    pandoc
-    pointfree
-    pointful
-    stylishHaskell
-  ];
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -43,6 +27,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    # popcorntime
     acpi
     ansible
     atom
@@ -50,9 +35,6 @@ in
     dmenu
     docker
     git
-    (haskellPackages.hoogleLocal.override {
-      packages = hsPackages;
-    })
     idea.idea-community
     mercurial # command-not-found script
     mplayer
@@ -60,7 +42,6 @@ in
     nixops
     nodejs
     oraclejdk8
-    # popcorntime
     rxvt_unicode
     sbt
     scala_2_11
@@ -70,6 +51,7 @@ in
     unzip
     wpa_supplicant_gui
     xclip
+    xlibs.xbacklight
   ];
 
   # services.openssh.enable = true;

@@ -15,8 +15,8 @@ main = xmonad $ defaultConfig
   , logHook = setWMName "LG3D" >> takeTopFocus
   , borderWidth = 0
   } `additionalKeys`
-  [ ((0, xF86XK_MonBrightnessUp ), spawn "xbacklight -10") 
-  , ((0, xF86XK_MonBrightnessDown ), spawn "xbacklight +10") 
+  [ ((0, xF86XK_MonBrightnessDown ), spawn "xbacklight -10") 
+  , ((0, xF86XK_MonBrightnessUp ), spawn "xbacklight +10") 
   , ((0, xF86XK_AudioMute ), spawn "amixer -q sset Master toggle")  
   , ((0, xF86XK_AudioLowerVolume ), spawn "amixer -q sset Master 5%-") 
   , ((0, xF86XK_AudioRaiseVolume ), spawn "amixer -q sset Master 5%+")
