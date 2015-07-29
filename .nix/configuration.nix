@@ -36,6 +36,7 @@
     docker
     git
     gimp
+    haskellPackages.purescript
     idea.idea-community
     mercurial # command-not-found script
     mplayer
