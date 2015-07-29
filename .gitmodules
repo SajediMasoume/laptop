@@ -15,7 +15,7 @@
 	url = git@github.com:MasseGuillaume/ScalaKata.git
 [submodule "NixOS/nixpkgs"]
 	path = NixOS/nixpkgs
-	url = git@github.com:MasseGuillaume/nixpkgs.git
+	url = git@github.com:NixOS/nixpkgs.git
 [submodule "scalameta/scalameta"]
 	path = scalameta/scalameta
 	url = git@github.com:MasseGuillaume/scalameta.git
@@ -43,3 +43,9 @@
 [submodule "MasseGuillaume/HaHaHa"]
 	path = MasseGuillaume/HaHaHa
 	url = git@bitbucket.org:masseguillaume/wifi.git
+[submodule "MasseGuillaume/Haskell-Mtl-Nix"]
+	path = MasseGuillaume/Haskell-Mtl-Nix
+	url = git@github.com:MasseGuillaume/Haskell-Mtl-Nix.git
+[submodule "NixOS/nixops"]
+	path = NixOS/nixops
+	url = git@github.com:NixOS/nixops.git

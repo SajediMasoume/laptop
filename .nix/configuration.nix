@@ -36,12 +36,13 @@
     docker
     git
     gimp
-    haskellPackages.purescript
+    # haskellPackages.purescript
+    haskellPackages.ghc
     idea.idea-community
     mercurial # command-not-found script
     mplayer
     nix
-    nixops
+    # nixops
     nodejs
     oraclejdk8
     rxvt_unicode
@@ -62,6 +63,7 @@
   # services.printing.enable = true;
   programs.zsh.enable = true;
   # services.peerflix.enable = true;
+  services.virtualboxHost.enable = true;
 
   users.mutableUsers = true;
   users.extraUsers.gui = {
@@ -111,6 +113,7 @@
   };
 
   nixpkgs.config = {
+    # virtualbox.enableExtensionPack = true;
     allowUnfree = true;
     chromium = {
       enablePepperFlash = true;

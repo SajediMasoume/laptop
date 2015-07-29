@@ -16,6 +16,7 @@ metadoc/
 .mplayer
 .nix-defexpr/
 .nix-profile
+.nixops
 .npm/
 .oh-my-zsh/
 .pki
@@ -31,3 +32,4 @@ metadoc/
 .config/node-webkit/
 .gimp-2.8/
 .thumbnails/
+.ghc/ghci_history
