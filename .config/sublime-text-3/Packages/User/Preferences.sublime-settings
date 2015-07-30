@@ -1,14 +1,26 @@
 {
-  "animation_enabled": false,
-  "caret_style": "solid",
-  "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
-  "file_exclude_patterns": [".git"],
-  "folder_exclude_patterns":["target", ".git"],
-  "font_size": 12,
-  "gutter": false,
-  "margin": 10,
-  "overlay_scroll_bars": "enabled",
-  "tab_completion": false,
-  "translate_tabs_to_spaces": true,
-  "tree_animation_enabled": false
+	"animation_enabled": false,
+	"caret_style": "solid",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"file_exclude_patterns":
+	[
+		".git"
+	],
+	"folder_exclude_patterns":
+	[
+		"target",
+		".git"
+	],
+	"font_size": 12,
+	"gutter": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"margin": 10,
+	"overlay_scroll_bars": "enabled",
+	"tab_completion": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false
 }
