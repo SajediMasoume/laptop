@@ -5,7 +5,7 @@ scala/
 scalameta/
 metadoc/
 .cintia/
-
+VirtualBox VMs/
 .cache/
 .compose-cache/
 .dbus/
@@ -33,3 +33,4 @@ metadoc/
 .gimp-2.8/
 .thumbnails/
 .ghc/ghci_history
+.lesshst

@@ -9,7 +9,7 @@
 
   time.timeZone = "America/Montreal";
 
-  nix.binaryCaches = [ http://cache.nixos.org http://hydra.nixos.org ];
+  # nix.binaryCaches = [ http://cache.nixos.org http://hydra.nixos.org ];
 
   boot.loader.grub = {
     enable = true;
@@ -17,8 +17,10 @@
     device = "/dev/sda";
   };
 
-  networking.hostName = "bob";
-  networking.wireless.enable = true;
+  networking = {
+    hostName = "bob";
+    wireless.enable = true;
+  };
 
   i18n = {
      consoleFont = "";
@@ -42,7 +44,7 @@
     mercurial # command-not-found script
     mplayer
     nix
-    # nixops
+    # - nixops
     nodejs
     oraclejdk8
     rxvt_unicode
@@ -58,60 +60,77 @@
     xlibs.xbacklight
   ];
 
-  # services.openssh.enable = true;
-  # programs.ssh.startAgent = true;
-  # services.printing.enable = true;
-  programs.zsh.enable = true;
-  # services.peerflix.enable = true;
-  services.virtualboxHost.enable = true;
 
-  users.mutableUsers = true;
-  users.extraUsers.gui = {
-    name = "gui";
-    group = "users";
-    uid = 1000;
-    extraGroups = [ "wheel" ];
-    createHome = true;
-    home = "/home/gui";
-    shell = "/run/current-system/sw/bin/zsh";
+  services = {
+    samba.enable = true;
+    # openssh.enable = true;
+    # printing.enable = true;
+    # peerflix.enable = true;
+    virtualboxHost.enable = true;
+    upower.enable = true;
+    nixosManual.showManual = false;
+
+    xserver = {
+      enable = true;
+      layout = "en";
+
+      synaptics = {
+        enable = true;
+        palmDetect = true;
+        tapButtons = true;
+        twoFingerScroll = true;
+      };
+
+      windowManager = {
+        default = "xmonad";
+        xmonad.enable = true;
+        xmonad.enableContribAndExtras = true;
+      };
+      
+      desktopManager = {
+        default = "none";
+        xterm.enable = false;
+      };
+      displayManager = {
+        slim = {
+          autoLogin = true;
+          enable = true;
+          defaultUser = "gui";
+        };
+        sessionCommands = ''
+          ${pkgs.xlibs.xrdb}/bin/xrdb -all ~/.Xresources
+          ${pkgs.xlibs.xsetroot}/bin/xsetroot -cursor_name left_ptr
+          ${pkgs.xlibs.xset}/bin/xset r rate 200 50
+          ${pkgs.xlibs.xinput}/bin/xinput set-prop 8 "Device Accel Constant Deceleration" 3
+          ${pkgs.redshift}/bin/redshift &
+          ${pkgs.compton}/bin/compton -r 4 -o 0.75 -l -6 -t -6 -c -G -b
+          ${pkgs.hsetroot}/bin/hsetroot -solid '#000000'
+        '';
+      };
+    };
+  };
+
+  programs = {
+    # ssh.startAgent = true;
+    zsh.enable = true;
+  };
+  
+
+  users = {
+    mutableUsers = true;
+    extraUsers.gui = {
+      name = "gui";
+      group = "users";
+      uid = 1000;
+      extraGroups = [ "wheel" ];
+      createHome = true;
+      home = "/home/gui";
+      shell = "/run/current-system/sw/bin/zsh";
+    };
+    extraGroups.docker.members = [ "gui" ];
   };
   security.sudo.wheelNeedsPassword = false;
-  users.extraGroups.docker.members = [ "gui" ];
-
-  services.xserver = {
-    enable = true;
-    layout = "en";
-
-    synaptics = {
-      enable = true;
-      palmDetect = true;
-      tapButtons = true;
-      twoFingerScroll = true;
-    };
-
-    windowManager.xmonad.enable = true;
-    windowManager.xmonad.enableContribAndExtras = true;
-    windowManager.default = "xmonad";
-    desktopManager.xterm.enable = false;
-    desktopManager.default = "none";
-    displayManager = {
-      slim = {
-        autoLogin = true;
-        enable = true;
-        defaultUser = "gui";
-      };
-      sessionCommands = ''
-        ${pkgs.xlibs.xrdb}/bin/xrdb -all ~/.Xresources
-        ${pkgs.xlibs.xsetroot}/bin/xsetroot -cursor_name left_ptr
-        ${pkgs.xlibs.xset}/bin/xset r rate 200 50
-        ${pkgs.xlibs.xinput}/bin/xinput set-prop 8 "Device Accel Constant Deceleration" 3
-        ${pkgs.redshift}/bin/redshift &
-        ${pkgs.compton}/bin/compton -r 4 -o 0.75 -l -6 -t -6 -c -G -b
-        ${pkgs.hsetroot}/bin/hsetroot -solid '#000000'
-      '';
-    };
-  };
-
+  
   nixpkgs.config = {
     # virtualbox.enableExtensionPack = true;
     allowUnfree = true;
@@ -128,8 +147,6 @@
     };
   };
 
-  services.upower.enable = true;
-  services.nixosManual.showManual = false;
 
   virtualisation.docker.enable = true;
 
