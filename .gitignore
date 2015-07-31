@@ -6,6 +6,7 @@ scalameta/
 metadoc/
 .cintia/
 VirtualBox VMs/
+.IdeaIC14/
 .cache/
 .compose-cache/
 .dbus/
@@ -34,3 +35,4 @@ VirtualBox VMs/
 .thumbnails/
 .ghc/ghci_history
 .lesshst
+.bintray/.credentials
