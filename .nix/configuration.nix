@@ -39,14 +39,15 @@
     git
     gimp
     # haskellPackages.purescript
-    haskellPackages.ghc
+    # haskellPackages.ghc
     idea.idea-community
     mercurial # command-not-found script
     mplayer
     nix
     # - nixops
-    nodejs
+    # nodejs
     oraclejdk8
+    octave
     rxvt_unicode
     sbt
     scala_2_11

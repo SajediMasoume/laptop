@@ -35,4 +35,5 @@ VirtualBox VMs/
 .thumbnails/
 .ghc/ghci_history
 .lesshst
-.bintray/.credentials
+.bintray/.credentials*
+.dockercfg

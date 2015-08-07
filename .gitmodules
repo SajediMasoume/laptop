@@ -49,3 +49,6 @@
 [submodule "NixOS/nixops"]
 	path = NixOS/nixops
 	url = git@github.com:NixOS/nixops.git
+[submodule "MasseGuillaume/semverfi"]
+	path = MasseGuillaume/semverfi
+	url = git@github.com:MasseGuillaume/semverfi.git
