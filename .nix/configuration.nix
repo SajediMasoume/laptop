@@ -9,7 +9,7 @@
 
   time.timeZone = "America/Montreal";
 
-  # nix.binaryCaches = [ http://cache.nixos.org http://hydra.nixos.org ];
+  # nix.binaryCaches = [ http://cache.nixos.org ];
 
   boot.loader.grub = {
     enable = true;
@@ -61,17 +61,21 @@
     xlibs.xbacklight
   ];
 
-
   services = {
     samba.enable = true;
     # openssh.enable = true;
     # printing.enable = true;
-    # peerflix.enable = true;
-    virtualboxHost.enable = true;
+    peerflix.enable = true;
+    #deluge = {
+    #  enable = true;
+    #  web.enable = true;
+    #};
+
     upower.enable = true;
     nixosManual.showManual = false;
 
     xserver = {
+      videoDrivers = [ "nvidia" ];
       enable = true;
       layout = "en";
 
@@ -80,12 +84,14 @@
         palmDetect = true;
         tapButtons = true;
         twoFingerScroll = true;
+        accelFactor = "0.01";
+	      maxSpeed = "2";
       };
 
       windowManager = {
-        default = "xmonad";
-        xmonad.enable = true;
-        xmonad.enableContribAndExtras = true;
+        # default = "xmonad";
+        # xmonad.enable = true;
+        # xmonad.enableContribAndExtras = true;
       };
       
       desktopManager = {
@@ -135,6 +141,7 @@
   nixpkgs.config = {
     # virtualbox.enableExtensionPack = true;
     allowUnfree = true;
+    allowBroken = true;
     chromium = {
       enablePepperFlash = true;
       enablePepperPDF = true;
@@ -149,7 +156,10 @@
   };
 
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    virtualbox.host.enable = true;
+  };
 
   fonts = {
     enableGhostscriptFonts = true;

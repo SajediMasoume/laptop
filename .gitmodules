@@ -52,3 +52,6 @@
 [submodule "MasseGuillaume/semverfi"]
 	path = MasseGuillaume/semverfi
 	url = git@github.com:MasseGuillaume/semverfi.git
+[submodule "MasseGuillaume/masseguillaume.github.io.git"]
+	path = MasseGuillaume/masseguillaume.github.io.git
+	url = git@github.com:MasseGuillaume/masseguillaume.github.io.git
