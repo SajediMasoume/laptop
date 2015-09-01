@@ -40,9 +40,6 @@
 [submodule "metadoc/dbuild"]
 	path = metadoc/dbuild
 	url = git@github.com:metadoc/dbuild.git
-[submodule "MasseGuillaume/HaHaHa"]
-	path = MasseGuillaume/HaHaHa
-	url = git@bitbucket.org:masseguillaume/wifi.git
 [submodule "MasseGuillaume/Haskell-Mtl-Nix"]
 	path = MasseGuillaume/Haskell-Mtl-Nix
 	url = git@github.com:MasseGuillaume/Haskell-Mtl-Nix.git
@@ -61,3 +58,6 @@
 [submodule "slamdata/slamengine"]
 	path = slamdata/slamengine
 	url = git@github.com:slamdata/slamengine.git
+[submodule ".wifi"]
+	path = .wifi
+	url = git@bitbucket.org:masseguillaume/wifi.git
