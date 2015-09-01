@@ -1,3 +1,7 @@
 {
-	"run_command": "~webappJVM/reStart"
+	"run_command1": "~webappJVM/reStart",
+  "run_command2": "~evaluation/test",
+  "run_command3": "~core/testOnly slamdata.engine.config.MongoUriSpec",
+  "run_command4": "~core/testQuick",
+  "run_command": "~web/testOnly slamdata.engine.api.ApiSpecs"
 }

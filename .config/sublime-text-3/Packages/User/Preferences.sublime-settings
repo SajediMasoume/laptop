@@ -13,11 +13,11 @@
 		".idea"
 	],
 	"font_size": 12,
-	"gutter": false,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"line_numbers": false,
 	"margin": 10,
 	"overlay_scroll_bars": "enabled",
 	"tab_completion": false,

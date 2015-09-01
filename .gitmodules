@@ -55,3 +55,9 @@
 [submodule "MasseGuillaume/masseguillaume.github.io.git"]
 	path = MasseGuillaume/masseguillaume.github.io.git
 	url = git@github.com:MasseGuillaume/masseguillaume.github.io.git
+[submodule "MasseGuillaume/sqlparser"]
+	path = MasseGuillaume/sqlparser
+	url = git@github.com:MasseGuillaume/sqlparser.git
+[submodule "slamdata/slamengine"]
+	path = slamdata/slamengine
+	url = git@github.com:slamdata/slamengine.git
