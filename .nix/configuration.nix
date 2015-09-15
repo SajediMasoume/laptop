@@ -1,15 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <nixos/modules/programs/command-not-found/command-not-found.nix>
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   time.timeZone = "America/Montreal";
-
-  # nix.binaryCaches = [ http://cache.nixos.org ];
 
   boot.loader.grub = {
     enable = true;
@@ -29,6 +25,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # - nixops
+    # haskellPackages.ghc
+    # haskellPackages.purescript
+    # nodejs
     # popcorntime
     acpi
     ansible
@@ -36,18 +36,14 @@
     chromiumDev
     dmenu
     docker
-    git
     gimp
-    # haskellPackages.purescript
-    # haskellPackages.ghc
+    git
     idea.idea-community
     mercurial # command-not-found script
     mplayer
     nix
-    # - nixops
-    # nodejs
-    oraclejdk8
     octave
+    oraclejdk8
     rxvt_unicode
     sbt
     scala_2_11
@@ -62,20 +58,10 @@
   ];
 
   services = {
-    samba.enable = true;
-    # openssh.enable = true;
-    # printing.enable = true;
-    peerflix.enable = true;
-    #deluge = {
-    #  enable = true;
-    #  web.enable = true;
-    #};
-
     upower.enable = true;
     nixosManual.showManual = false;
-
     xserver = {
-      videoDrivers = [ "nvidia" ];
+      # videoDrivers = [ "nvidia" ];
       enable = true;
       layout = "en";
 
@@ -85,13 +71,13 @@
         tapButtons = true;
         twoFingerScroll = true;
         accelFactor = "0.01";
-	      maxSpeed = "2";
+	maxSpeed = "2";
       };
 
       windowManager = {
-        # default = "xmonad";
-        # xmonad.enable = true;
-        # xmonad.enableContribAndExtras = true;
+        default = "xmonad";
+        xmonad.enable = true;
+        xmonad.enableContribAndExtras = true;
       };
       
       desktopManager = {
@@ -118,11 +104,9 @@
   };
 
   programs = {
-    # ssh.startAgent = true;
     zsh.enable = true;
   };
   
-
   users = {
     mutableUsers = true;
     extraUsers.gui = {
@@ -139,9 +123,7 @@
   security.sudo.wheelNeedsPassword = false;
   
   nixpkgs.config = {
-    # virtualbox.enableExtensionPack = true;
     allowUnfree = true;
-    allowBroken = true;
     chromium = {
       enablePepperFlash = true;
       enablePepperPDF = true;
@@ -155,11 +137,10 @@
     };
   };
 
-
-  virtualisation = {
-    docker.enable = true;
-    virtualbox.host.enable = true;
-  };
+  # virtualisation = {
+  #   docker.enable = true;
+  #   virtualisation.docker.storageDriver ???
+  # };
 
   fonts = {
     enableGhostscriptFonts = true;

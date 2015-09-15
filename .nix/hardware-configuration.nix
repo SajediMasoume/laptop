@@ -8,19 +8,20 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" ];
+  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "usbhid" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9886c535-39c4-4772-ba38-b120620b5263";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/root";
       fsType = "ext4";
     };
-
-  fileSystems."/data" =
-    { device = "/dev/disk/by-uuid/a517930e-935e-463e-814d-2bb34f855cd0";
+    "/data" = {
+      device = "/dev/disk/by-label/data";
       fsType = "ext4";
     };
+  };
 
   swapDevices = [ ];
 
