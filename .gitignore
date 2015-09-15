@@ -45,3 +45,8 @@ NixOS/
 scala/
 scalameta/
 VirtualBox VMs/
+Films/
+.node-gyp/
+node_modules/
+.ammonite/
+sbt/
