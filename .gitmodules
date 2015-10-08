@@ -52,9 +52,6 @@
 [submodule "MasseGuillaume/masseguillaume.github.io.git"]
 	path = MasseGuillaume/masseguillaume.github.io.git
 	url = git@github.com:MasseGuillaume/masseguillaume.github.io.git
-[submodule "slamdata/quasar"]
-	path = slamdata/quasar
-	url = git@github.com:slamdata/quasar.git
 [submodule ".wifi"]
 	path = .wifi
 	url = git@bitbucket.org:masseguillaume/wifi.git

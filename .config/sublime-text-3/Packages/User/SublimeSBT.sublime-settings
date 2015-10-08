@@ -1,8 +1,3 @@
 {
-	"run_command1": "~;cls;webappJVM/reStart",
-  "run_command2": "~evaluation/test",
-  "run_command4": "~core/testOnly slamdata.engine.config.ConfigSpec",
-  "run_command4": "~core/testQuick",
-  "run_command": "~web/testOnly slamdata.engine.api.ApiSpecs -- exlude slow",
-  "run_command6": "~testBench/compile"
+	"run_command": "~;cls;webappJVM/reStart"
 }

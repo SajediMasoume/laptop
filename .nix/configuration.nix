@@ -25,15 +25,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # - nixops
-    # haskellPackages.ghc
-    # haskellPackages.purescript
-    # nodejs
-    # popcorntime
     acpi
     ansible
     atom
-    chromiumDev
+    # chromiumDev
+    chromium
     dmenu
     docker
     gimp
@@ -52,6 +48,7 @@
     tig
     tree
     unzip
+    wireshark
     wpa_supplicant_gui
     xclip
     xlibs.xbacklight
@@ -71,7 +68,7 @@
         tapButtons = true;
         twoFingerScroll = true;
         accelFactor = "0.01";
-	maxSpeed = "2";
+        maxSpeed = "2";
       };
 
       windowManager = {
@@ -113,14 +110,25 @@
       name = "gui";
       group = "users";
       uid = 1000;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "wireshark"];
       createHome = true;
       home = "/home/gui";
       shell = "/run/current-system/sw/bin/zsh";
     };
-    extraGroups.docker.members = [ "gui" ];
+    extraGroups.wireshark.gid = 500;
   };
-  security.sudo.wheelNeedsPassword = false;
+
+  security = {
+    sudo.wheelNeedsPassword = false;
+    setuidOwners = [{ 
+      program = "dumpcap";
+      owner = "root";
+      group = "wireshark";
+      setuid = true;
+      setgid = false;
+      permissions = "u+rx,g+x";
+    }];
+  };
   
   nixpkgs.config = {
     allowUnfree = true;
@@ -136,11 +144,6 @@
       jre = pkgs.oraclejdk8.jre;
     };
   };
-
-  # virtualisation = {
-  #   docker.enable = true;
-  #   virtualisation.docker.storageDriver ???
-  # };
 
   fonts = {
     enableGhostscriptFonts = true;
