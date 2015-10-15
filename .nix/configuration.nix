@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -142,6 +141,7 @@
     packageOverrides = pkgs : rec {
       jdk = pkgs.oraclejdk8;
       jre = pkgs.oraclejdk8.jre;
+      kawkab-mono-font = pkgs.callPackage ./kawkab-mono.nix { };
     };
   };
 
@@ -162,6 +162,7 @@
       unifont
       vistafonts
       powerline-fonts
+      kawkab-mono-font
     ];
   };
 }
