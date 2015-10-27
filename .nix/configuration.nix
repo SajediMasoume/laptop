@@ -14,7 +14,6 @@
 
   networking = {
     hostName = "bob";
-    wireless.enable = true;
   };
 
   i18n = {
@@ -27,7 +26,6 @@
     acpi
     ansible
     atom
-    # chromiumDev
     chromium
     dmenu
     docker
@@ -48,7 +46,6 @@
     tree
     unzip
     wireshark
-    wpa_supplicant_gui
     xclip
     xlibs.xbacklight
   ];
@@ -57,18 +54,9 @@
     upower.enable = true;
     nixosManual.showManual = false;
     xserver = {
-      # videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "amd" ];
       enable = true;
       layout = "en";
-
-      synaptics = {
-        enable = true;
-        palmDetect = true;
-        tapButtons = true;
-        twoFingerScroll = true;
-        accelFactor = "0.01";
-        maxSpeed = "2";
-      };
 
       windowManager = {
         default = "xmonad";
