@@ -26,14 +26,17 @@
     acpi
     ansible
     atom
+    nodePackages.bower
     chromium
     dmenu
     docker
     gimp
     git
+    nodePackages.grunt-cli
     idea.idea-community
     mercurial # command-not-found script
     mplayer
+    nodejs
     nix
     octave
     oraclejdk8
@@ -53,6 +56,8 @@
   services = {
     upower.enable = true;
     nixosManual.showManual = false;
+    postgresql.enable = true;
+    mongodb.enable = true;
     xserver = {
       videoDrivers = [ "amd" ];
       enable = true;
