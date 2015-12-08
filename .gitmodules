@@ -1,57 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "scala/scala"]
-	path = scala/scala
-	url = git@github.com:scala/scala.git
-[submodule "scala/pickling"]
-	path = scala/pickling
-	url = git@github.com:scala/pickling.git
-[submodule "MasseGuillaume/ScalaKata2"]
-	path = MasseGuillaume/ScalaKata2
-	url = git@github.com:MasseGuillaume/ScalaKata2.git
-[submodule "MasseGuillaume/ScalaKata"]
-	path = MasseGuillaume/ScalaKata
-	url = git@github.com:MasseGuillaume/ScalaKata.git
-[submodule "NixOS/nixpkgs"]
-	path = NixOS/nixpkgs
-	url = git@github.com:NixOS/nixpkgs.git
-[submodule "scalameta/scalameta"]
-	path = scalameta/scalameta
-	url = git@github.com:MasseGuillaume/scalameta.git
-[submodule "scalameta/example"]
-	path = scalameta/example
-	url = git@github.com:MasseGuillaume/scalameta-example.git
-[submodule "scalameta/scalahost"]
-	path = scalameta/scalahost
-	url = git@github.com:MasseGuillaume/scalameta-scalahost.git
-[submodule "scalameta/interpreter"]
-	path = scalameta/interpreter
-	url = git@github.com:MasseGuillaume/scalameta-interpreter.git
-[submodule "metadoc/metadoc"]
-	path = metadoc/metadoc
-	url = git@github.com:metadoc/metadoc.git
-[submodule "metadoc/cats"]
-	path = metadoc/cats
-	url = git@github.com:metadoc/cats.git
-[submodule "metadoc/poms"]
-	path = metadoc/poms
-	url = git@github.com:metadoc/poms.git
-[submodule "metadoc/dbuild"]
-	path = metadoc/dbuild
-	url = git@github.com:metadoc/dbuild.git
-[submodule "MasseGuillaume/Haskell-Mtl-Nix"]
-	path = MasseGuillaume/Haskell-Mtl-Nix
-	url = git@github.com:MasseGuillaume/Haskell-Mtl-Nix.git
-[submodule "NixOS/nixops"]
-	path = NixOS/nixops
-	url = git@github.com:NixOS/nixops.git
-[submodule "MasseGuillaume/semverfi"]
-	path = MasseGuillaume/semverfi
-	url = git@github.com:MasseGuillaume/semverfi.git
-[submodule "MasseGuillaume/masseguillaume.github.io.git"]
-	path = MasseGuillaume/masseguillaume.github.io.git
-	url = git@github.com:MasseGuillaume/masseguillaume.github.io.git
 [submodule ".wifi"]
 	path = .wifi
-	url = git@bitbucket.org:masseguillaume/wifi.git
+	url = git@bitbucket.org:SajediMasoume/wifi.git

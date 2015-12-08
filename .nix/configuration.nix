@@ -13,7 +13,7 @@
   };
 
   networking = {
-    hostName = "bob";
+    hostName = "mm";
     wireless.enable = true;
   };
 
@@ -24,30 +24,20 @@
   };
 
   environment.systemPackages = with pkgs; [
-    acpi
-    ansible
+    acpi   
     atom
-    # chromiumDev
     chromium
     dmenu
-    docker
     gimp
     git
-    idea.idea-community
     mercurial # command-not-found script
     mplayer
     nix
     octave
-    oraclejdk8
     rxvt_unicode
-    sbt
-    scala_2_11
-    scrot
-    sublime3
     tig
     tree
     unzip
-    wireshark
     wpa_supplicant_gui
     xclip
     xlibs.xbacklight
@@ -57,10 +47,8 @@
     upower.enable = true;
     nixosManual.showManual = false;
     xserver = {
-      # videoDrivers = [ "nvidia" ];
       enable = true;
       layout = "en";
-
       synaptics = {
         enable = true;
         palmDetect = true;
@@ -84,7 +72,7 @@
         slim = {
           autoLogin = true;
           enable = true;
-          defaultUser = "gui";
+          defaultUser = "masou";
         };
         sessionCommands = ''
           ${pkgs.xlibs.xrdb}/bin/xrdb -all ~/.Xresources
@@ -105,28 +93,19 @@
   
   users = {
     mutableUsers = true;
-    extraUsers.gui = {
-      name = "gui";
+    extraUsers.masou = {
+      name = "masou";
       group = "users";
       uid = 1000;
-      extraGroups = [ "wheel" "wireshark"];
+      extraGroups = ["wheel"];
       createHome = true;
-      home = "/home/gui";
+      home = "/home/masou";
       shell = "/run/current-system/sw/bin/zsh";
     };
-    extraGroups.wireshark.gid = 500;
   };
 
   security = {
     sudo.wheelNeedsPassword = false;
-    setuidOwners = [{ 
-      program = "dumpcap";
-      owner = "root";
-      group = "wireshark";
-      setuid = true;
-      setgid = false;
-      permissions = "u+rx,g+x";
-    }];
   };
   
   nixpkgs.config = {
@@ -135,12 +114,7 @@
       enablePepperFlash = true;
       enablePepperPDF = true;
     };
-    oraclejdk8 = {
-      installjce = true;
-    };
     packageOverrides = pkgs : rec {
-      jdk = pkgs.oraclejdk8;
-      jre = pkgs.oraclejdk8.jre;
       kawkab-mono-font = pkgs.callPackage ./kawkab-mono.nix { };
     };
   };
